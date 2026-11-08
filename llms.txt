@@ -1,0 +1,11 @@
+# LinkedIn profile enrichment
+
+> LinkedIn workflows powered by the LeadAdapter API key.
+
+- [Quick start](README.md)
+- [Capabilities](capabilities.json)
+- [Agent instructions](AGENTS.md)
+- [Research and CRM cookbook](docs/research-to-crm.md)
+- [linkedin-profile-enrichment](.agents/skills/linkedin-profile-enrichment/SKILL.md)
+
+Package/fixture testing does not establish live provider execution.

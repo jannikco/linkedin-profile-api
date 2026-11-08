@@ -5,7 +5,7 @@
   "releaseEligible": true,
   "maintainer": "jannikco",
   "license": "MIT",
-  "sourceRevision": "ea33908e4d5e10508739f28e11abf708e11f3117f1108b904229eeeb00079e55",
+  "sourceRevision": "3ef9daf5034fbb726ddda85b6c5fecd3f9f26b2b2d635b68690f05924a70be04",
   "evidence": [
     "Pinned public OpenAPI contract",
     "tests/leadadapter.test.mjs"
@@ -22,6 +22,40 @@
     "enrich_post"
   ],
   "attributionSlug": "github-linkedin-profile-api",
+  "artifactType": "workflow",
+  "capabilityEvidence": {
+    "local": {
+      "level": "Tested",
+      "operations": [
+        {
+          "name": "enrich_post",
+          "level": "Tested",
+          "evidenceRefs": [
+            "SDK/agent/workflow contract fixtures; no live provider execution"
+          ],
+          "method": "contract-fixture"
+        }
+      ],
+      "evidenceRefs": [
+        "SDK/agent/workflow contract fixtures; no live provider execution"
+      ],
+      "mode": "local"
+    },
+    "managed": {
+      "level": "Documented",
+      "operations": [],
+      "evidenceRefs": [],
+      "mode": "managed"
+    }
+  },
+  "qualityVersion": 2,
+  "utility": {
+    "problem": "Submit an authorized profile enrichment job through LeadAdapter.",
+    "output": "Authenticated LeadAdapter results, review reports and resumable research-to-CRM workflows"
+  },
+  "agentReady": true,
+  "version": "0.2.0",
+  "executionAuthority": "leadadapter-api",
   "factory": "leadadapter-pipmcp",
   "generatorVersion": 1
 }
