@@ -5,7 +5,7 @@
   "releaseEligible": true,
   "maintainer": "jannikco",
   "license": "MIT",
-  "sourceRevision": "86348ff06f5b91d662842addbf9b6492622282944888e25170fcfa2e18b3f3b2",
+  "sourceRevision": "11628dc29a9c3da55b39a600d352f9fac4a888db35abae90505e80847f97b9e2",
   "evidence": [
     "Pinned public OpenAPI contract",
     "tests/leadadapter.test.mjs"
@@ -17,7 +17,7 @@
   "kind": "leadadapter-recipe",
   "product": "leadadapter",
   "title": "LinkedIn profile enrichment",
-  "description": "Submit an authorized profile enrichment job through LeadAdapter.",
+  "description": "Enrich selected LinkedIn profiles through LeadAdapter. Typed clients, AI-agent instructions and source-preserving research workflows.",
   "operationIds": [
     "enrich_post"
   ],
@@ -50,11 +50,11 @@
   },
   "qualityVersion": 2,
   "utility": {
-    "problem": "Submit an authorized profile enrichment job through LeadAdapter.",
+    "problem": "Enrich selected LinkedIn profiles through LeadAdapter. Typed clients, AI-agent instructions and source-preserving research workflows.",
     "output": "Authenticated LeadAdapter results, review reports and resumable research-to-CRM workflows"
   },
   "agentReady": true,
-  "version": "0.2.0",
+  "version": "0.2.1",
   "executionAuthority": "leadadapter-api",
   "factory": "leadadapter-pipmcp",
   "generatorVersion": 1

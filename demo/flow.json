@@ -1,0 +1,49 @@
+{
+  "id": "profile-completeness",
+  "repositoryId": "linkedin-profile-api",
+  "product": "leadadapter",
+  "connectorId": "linkedin",
+  "title": "Review profile enrichment before CRM handoff",
+  "promise": "Find enriched profiles with verified company context and preserve source identity.",
+  "sourceRevision": "11628dc29a9c3da55b39a600d352f9fac4a888db35abae90505e80847f97b9e2",
+  "credential": "LEADADAPTER_API_KEY",
+  "transport": "leadadapter-rest",
+  "sourceRefs": [
+    "https://leadadapter.com/docs/api-reference?lang=en"
+  ],
+  "readTask": {
+    "intent": "Find enriched profiles with verified company context and preserve source identity.",
+    "requiredCapability": "Read-only authorized account data; discover actual names and schemas first"
+  },
+  "synthetic": {
+    "strategy": "equals",
+    "field": "companyVerified",
+    "value": true,
+    "records": [
+      {
+        "id": "synthetic-profile-c",
+        "companyVerified": true,
+        "company": "Synthetic Company"
+      },
+      {
+        "id": "synthetic-profile-d",
+        "companyVerified": false,
+        "company": null
+      }
+    ],
+    "input": {
+      "limit": 10
+    },
+    "normalization": "Invented normalized review fields demonstrate task logic; live provider schemas and field mappings must be reviewed separately.",
+    "expectedReviewCount": 1,
+    "asOf": "2026-11-08T00:00:00Z"
+  },
+  "livePolicy": {
+    "default": "preflight-only",
+    "explicitReadSelectionRequired": true,
+    "providerWritesAllowed": false,
+    "sandboxWritesRequireSeparateApproval": true
+  },
+  "baseSourceRevision": "86348ff06f5b91d662842addbf9b6492622282944888e25170fcfa2e18b3f3b2",
+  "releaseVersion": "0.2.1"
+}

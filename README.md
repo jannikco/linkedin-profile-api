@@ -1,5 +1,41 @@
 # LinkedIn Profile Enrichment API — LeadAdapter
 
+## Review profile enrichment before CRM handoff
+
+Find enriched profiles with verified company context and preserve source identity.
+
+### Try the task with synthetic data
+
+No product key is needed for this demo. Requires Node.js 22+.
+
+```sh
+npm ci --ignore-scripts
+npm run demo
+# Optional: save a private report to a new file.
+npm run demo -- --output ./synthetic-report.json
+```
+
+Output: a task-specific JSON review report selecting 1 of 2 invented records. It includes the completed fixture receipt and a request trace; no provider request or write occurs.
+
+The synthetic records use normalized review fields. Review and map your actual provider schema before applying the same selection to live data.
+
+### Use your authorized account
+
+[Activate this task](https://leadadapter.com/github/start?integration=linkedin-profile-api&flow=profile-completeness&utm_source=github&utm_campaign=github-linkedin-profile-api&utm_content=task-demo), then set **LEADADAPTER_API_KEY** in your process environment. Select an authorized connected LinkedIn profile; existing scopes, caps and review requirements apply.
+
+```sh
+npm run preflight
+```
+
+Preflight checks access/discovery only; it does not count as a completed provider task. For an explicitly reviewed read, use the returned live schema and the exact operation/tool, arguments and stable idempotency key:
+
+```sh
+npm run verify:read -- --operation enrich_post --params '<reviewed request JSON>' --idempotency-key '<stable request key>' --confirm-read-only
+```
+
+The verification command performs only the selected authorized read; it refuses writes and never selects a customer operation automatically. Only a completed receipt establishes a live read. Missing access, pending jobs and uncertain outcomes remain explicit blockers. Reports contain receipt digests rather than customer payloads. No prices, trials or account allowances are changed.
+
+
 **Add profile context to the people already relevant to your sales process.**
 
 Request profile enrichment using a known public profile identifier, LinkedIn URN or captured lead. LeadAdapter records the result on the lead and reports execution coverage, workspace allowance and governance decisions.
