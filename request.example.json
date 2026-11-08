@@ -1,0 +1,6 @@
+{
+  "body": {
+    "public_id": "example-profile"
+  },
+  "idempotencyKey": "example-request-001"
+}
